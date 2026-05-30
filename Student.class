@@ -1,0 +1,55 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public class Student {
+    private final IntegerProperty id;
+    private final StringProperty name;
+    private final StringProperty course;
+    private final StringProperty yearLevel;
+
+    public Student(int id, String name, String course, String yearLevel) {
+        this.id = new SimpleIntegerProperty(id);
+        this.name = new SimpleStringProperty(name);
+        this.course = new SimpleStringProperty(course);
+        this.yearLevel = new SimpleStringProperty(yearLevel);
+    }
+
+    public int getId() {
+        return this.id.get();
+    }
+
+    public String getName() {
+        return (String)this.name.get();
+    }
+
+    public String getCourse() {
+        return (String)this.course.get();
+    }
+
+    public String getYearLevel() {
+        return (String)this.yearLevel.get();
+    }
+
+    public IntegerProperty idProperty() {
+        return this.id;
+    }
+
+    public StringProperty nameProperty() {
+        return this.name;
+    }
+
+    public StringProperty courseProperty() {
+        return this.course;
+    }
+
+    public StringProperty yearLevelProperty() {
+        return this.yearLevel;
+    }
+}
