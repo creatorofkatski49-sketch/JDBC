@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controller"
+      spacing="16"
+      style="-fx-background-color: #f4f6fb;">
+
+    <padding>
+        <Insets top="20" right="24" bottom="20" left="24"/>
+    </padding>
+
+    <!-- Header -->
+    <Label text="Student Record Management System"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+    </Label>
+
+    <!-- Input Form -->
+    <TitledPane text="Student Information" collapsible="false"
+                style="-fx-font-weight: bold;">
+        <GridPane hgap="12" vgap="10">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <!-- Name -->
+            <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                   style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtName"
+                       promptText="Enter student name"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"
+                       prefWidth="260"/>
+
+            <!-- Course -->
+            <Label text="Course:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                   style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtCourse"
+                       promptText="e.g. BSCS, BSIT, BSEE"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1"
+                       prefWidth="260"/>
+
+            <!-- Year Level -->
+            <Label text="Year Level:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                   style="-fx-font-weight: bold;"/>
+            <ChoiceBox fx:id="cbYear"
+                       GridPane.columnIndex="1" GridPane.rowIndex="2"
+                       prefWidth="260"/>
+        </GridPane>
+    </TitledPane>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="➕  Add"
+                onAction="#addStudent"
+                prefWidth="110" prefHeight="34"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 5;"/>
+
+        <Button text="✏️  Update"
+                onAction="#updateStudent"
+                prefWidth="110" prefHeight="34"
+                style="-fx-background-color: #2980b9; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 5;"/>
+
+        <Button text="🗑️  Delete"
+                onAction="#deleteStudent"
+                prefWidth="110" prefHeight="34"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 5;"/>
+
+        <Button text="🔄  Clear"
+                onAction="#clearFields"
+                prefWidth="110" prefHeight="34"
+                style="-fx-background-color: #7f8c8d; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 5;"/>
+    </HBox>
+
+    <!-- TableView -->
+    <TableView fx:id="table" VBox.vgrow="ALWAYS"
+               style="-fx-border-color: #dde3ed; -fx-border-radius: 5;">
+        <columns>
+            <TableColumn fx:id="colId"    text="ID"         prefWidth="50"/>
+            <TableColumn fx:id="colName"  text="Name"       prefWidth="220"/>
+            <TableColumn fx:id="colCourse" text="Course"    prefWidth="180"/>
+            <TableColumn fx:id="colYear"  text="Year Level" prefWidth="130"/>
+        </columns>
+        <placeholder>
+            <Label text="No student records found." style="-fx-text-fill: #95a5a6;"/>
+        </placeholder>
+    </TableView>
+
+</VBox>
