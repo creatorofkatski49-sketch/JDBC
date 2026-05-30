@@ -1,0 +1,34 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+public enum YearLevel {
+    FIRST_YEAR,
+    SECOND_YEAR,
+    THIRD_YEAR,
+    FOURTH_YEAR;
+
+    private YearLevel() {
+    }
+
+    public String toString() {
+        switch (this.ordinal()) {
+            case 0 -> {
+                return "1st Year";
+            }
+            case 1 -> {
+                return "2nd Year";
+            }
+            case 2 -> {
+                return "3rd Year";
+            }
+            case 3 -> {
+                return "4th Year";
+            }
+            default -> {
+                return "";
+            }
+        }
+    }
+}
